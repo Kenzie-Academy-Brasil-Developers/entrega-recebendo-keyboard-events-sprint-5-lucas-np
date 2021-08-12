@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+              width: 200px;
+              height: 200px; 
+              position: absolute;
+              /*background: gray;*/
+              left: 200px;
+              top: 200px;
+              background-image: url("https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/b9/d4/ad/b9d4ad5f-11df-2584-dfaa-f74fd2a9d711/source/200x200bb.jpg");
+        }
+        body{
+          background-color: #0533FE;
+        }
+        h1{
+          color: #0a1a5f;
+        }
+    </style>
+</head>
+<script>
+    let boxTop = 200;
+    let boxLeft = 200;
+
+    'use strict';
+
+    document.addEventListener('keydown', (event) => {
+      const keyName = event.key;
+      //console.log('keydown event\n\n' + 'key: ' + keyName);
+      if (keyName === "ArrowDown"){
+        boxTop = boxTop + 10;
+      }
+
+      else if (keyName === "ArrowUp"){
+        boxTop = boxTop - 10;
+      }
+
+      else if (keyName === "ArrowLeft"){
+        boxLeft = boxLeft - 10;
+      }
+
+      else if (keyName === "ArrowRight"){
+        boxLeft = boxLeft + 10;
+      }
+
+      document.getElementById("box").style.top = boxTop + "px";
+
+      document.getElementById("box").style.left = boxLeft + "px";
+
+    }); 
+
+    
+
+  </script>
+</head>
+
+<body>
+  <h1>Navegue com o submarino!</h1>
+  <div id="box">
+
+  </div>
+</body>
+</html>
